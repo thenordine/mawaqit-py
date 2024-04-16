@@ -133,7 +133,7 @@ class AsyncMawaqitClient:
         async with await self.session.post(endpoint_url, auth=auth) as response:
             if response.status == 401:
                 raise BadCredentialsException("Authentication failed. Please check your MAWAQIT credentials.")
-            elif response.status != 200:
+            if response.status != 200:
                 raise NotAuthenticatedException("Authentication failed. Please retry.")
 
             data = await response.text()
