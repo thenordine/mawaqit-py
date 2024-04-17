@@ -11,6 +11,13 @@ from aiohttp import ClientSession
 
 from .consts import *
 
+from .exceptions import (
+    NotAuthenticatedException,
+    BadCredentialsException,
+    NoMosqueAround,
+    MissingCredentials,
+)
+
 JSON = Union[Dict[str, Any], List[Dict[str, Any]]]
 
 
